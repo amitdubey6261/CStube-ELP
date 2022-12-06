@@ -9,7 +9,7 @@ const requireAuth = async function(req,res,next) {
     }
     const token = authorization.replace('Bearer ', '');
     try{
-        const {_id} = jwt.verify(token, process.env.JWT_SECRET)
+        const {_id} = jwt.verify(token, "AMKNMKNMDKNMKND")
         req.user = await user.findOne({_id}).select('_id')
         next()
     } catch(err){
